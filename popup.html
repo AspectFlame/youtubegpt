@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Paster</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            width: 400px;
+            height: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 360px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            resize: none;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #resultDisplay {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            height: 150px;
+            overflow: auto;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #resultDisplay h1 {
+            font-size: 16px;
+            color: #444;
+            margin: 0;
+        }
+
+        /* Scrollbar styling */
+        textarea::-webkit-scrollbar, #resultDisplay::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        textarea::-webkit-scrollbar-thumb, #resultDisplay::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 4px;
+        }
+
+        textarea::-webkit-scrollbar-thumb:hover, #resultDisplay::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h3>ChatGPT for YouTube</h3>
+        <textarea id="textToPaste" placeholder="Enter text here"></textarea>
+        <button id="pasteButton">Paste</button>
+    </div>
+
+    <div id="resultDisplay" class="card">
+        <h1><span id="latestResultDisplay"></span></h1>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
