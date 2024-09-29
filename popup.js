@@ -1,5 +1,3 @@
-
-
 document.getElementById("pasteButton").addEventListener("click", async () => {
 
 
@@ -8,6 +6,7 @@ document.getElementById("pasteButton").addEventListener("click", async () => {
     chrome.tabs.query({ currentWindow: true }, async function (tabs) {
         if (tabs.length > 1) {
             const secondTabId = tabs[1].id;
+            
             console.log("Second tab title: ", tabs[1].title);
             console.log("Second tab ID: ", secondTabId);
 
@@ -37,7 +36,6 @@ document.getElementById("pasteButton").addEventListener("click", async () => {
                     var sendButton = document.querySelector('button[aria-label="Send prompt"]');
                     sendButton.click();
                     var tes = document.getElementsByClassName("text-base");
-                    
                     setTimeout(() => {
                         var result = tes[tes.length - 3].textContent;
                         console.log(result);
